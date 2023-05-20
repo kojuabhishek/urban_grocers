@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:urban_grocers/main.dart';
 import 'package:urban_grocers/screens/FirstScreen.dart';
 import 'package:urban_grocers/screens/HomeScreen.dart';
 
@@ -40,15 +41,15 @@ class FirstScreen extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomeScreen()),
-                            (route) => false);
-                      },
-                      child: Text("Lets Enter :"))
+                  // ElevatedButton(
+                  //     onPressed: () {
+                  //       Navigator.pushAndRemoveUntil(
+                  //           context,
+                  //           MaterialPageRoute(
+                  //               builder: (context) => HomeScreen()),
+                  //           (route) => false);
+                  //     },
+                  //     child: Text("Lets Enter :"))
                 ],
               ),
             )));

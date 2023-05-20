@@ -16,9 +16,9 @@ class ItemsProviders extends ChangeNotifier {
     notifyListeners();
   }
 
-  //function to delete items(add to card)
+  //function to delete items (add to card)
   void removeItems(int index) {
-    _items.remove(index);
+    _items.removeAt(index);
     notifyListeners();
   }
 }

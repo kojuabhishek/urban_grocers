@@ -56,6 +56,11 @@ class CardList extends StatelessWidget {
             Provider.of<ItemsProviders>(context, listen: false)
                 .removeItems(index)
           },
+          // onPressed: (context) => {
+          //   Provider.of<ItemsProviders>(context, listen: false)
+          //       .removeItems(index),
+
+          // },
         )
       ]),
       child: Container(

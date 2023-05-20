@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:isar/isar.dart';
 import 'package:provider/provider.dart';
 import 'package:urban_grocers/Data_Model/ItemsProviders.dart';
+import 'package:urban_grocers/Models/items.dart';
 import 'package:urban_grocers/screens/FirstScreen.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:urban_grocers/screens/HOME_SCREEN.dart';
+import 'package:urban_grocers/screens/HomeScreen.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final isar = await Isar.open([Items_2Schema],
+      directory: (await getApplicationDocumentsDirectory()).path);
+  runApp(MyApp(isar: isar));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final Isar isar;
+  const MyApp({required this.isar, super.key});
 
   // This widget is the root of your application.
   @override
@@ -29,7 +38,7 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: FirstScreen(),
+        home: DisplayRecords(isar: isar),
       ),
     );
   }
